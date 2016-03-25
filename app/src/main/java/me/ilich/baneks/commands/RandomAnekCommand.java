@@ -1,0 +1,24 @@
+package me.ilich.baneks.commands;
+
+import me.ilich.baneks.StringHelper;
+import me.ilich.baneks.data.Anek;
+
+public class RandomAnekCommand extends AbstractCommand<Anek> {
+
+    @Override
+    protected String getUrl() {
+        return "http://baneks.ru/random1";
+    }
+
+    @Override
+    protected Anek parseSuccessResponse(String s) {
+        String title = StringHelper.substring(s, "<meta property=\"og:title\" content=\"", "\"/>");
+        String content = StringHelper.substring(s, " <meta property=\"og:description\" content=\"", "\"/>");
+        return new Anek(title, content);
+    }
+
+    public interface Callback extends AbstractCommand.Callback<Anek> {
+
+    }
+
+}

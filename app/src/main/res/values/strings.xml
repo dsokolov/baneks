@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">АКБ</string>
+    <string name="title_banek">Анектоды категории Б</string>
+    <string name="error_general">Произошла ошибка</string>
+    <string name="retry">Ещё раз</string>
+    <string name="menu_reload">Ещё</string>
+</resources>
