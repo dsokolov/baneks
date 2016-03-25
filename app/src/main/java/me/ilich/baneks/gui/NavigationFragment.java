@@ -7,7 +7,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import java.util.Random;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import me.ilich.baneks.R;
 import me.ilich.baneks.commands.RandomAnekCommand;
 import me.ilich.baneks.states.AboutState;
@@ -30,7 +35,9 @@ public class NavigationFragment extends JugglerNavigationFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_navigation, container, false);
+        View v = inflater.inflate(R.layout.fragment_navigation, container, false);
+        ButterKnife.bind(this, v);
+        return v;
     }
 
     @Override
@@ -65,6 +72,14 @@ public class NavigationFragment extends JugglerNavigationFragment {
                     close();
                 }
                 return r;
+            }
+        });
+        navigationView.getHeaderView(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String[] says = getContext().getResources().getStringArray(R.array.banek_says);
+                int i = new Random().nextInt(says.length);
+                Toast.makeText(getContext(), says[i], Toast.LENGTH_SHORT).show();
             }
         });
     }

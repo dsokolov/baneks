@@ -11,4 +11,9 @@
     <string name="about_version">Версия %1$s (%2$s)</string>
     <string name="about_vk">VK</string>
     <string name="about_web">baneks.ru</string>
+    <string name="empty" />
+    <array name="banek_says">
+        <item>Ого-го!</item>
+        <item>Щекотно!</item>
+    </array>
 </resources>
