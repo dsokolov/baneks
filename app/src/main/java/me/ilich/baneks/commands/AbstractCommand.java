@@ -14,10 +14,12 @@ import java.net.URL;
 public abstract class AbstractCommand<T> {
 
     private AsyncTask<Void, Void, Response<T>> asyncTask = null;
-    private final SoftReference<Callback<T>> callbackRef;
+    //private final SoftReference<Callback<T>> callbackRef;
+    private final Callback<T> callback;
 
     protected AbstractCommand(Callback<T> callback) {
-        this.callbackRef = new SoftReference<>(callback);
+        //this.callbackRef = new SoftReference<>(callback);
+        this.callback = callback;
     }
 
     public void execute() {
@@ -26,7 +28,7 @@ public abstract class AbstractCommand<T> {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                Callback<T> callback = callbackRef.get();
+                //Callback<T> callback = callbackRef.get();
                 if (callback != null) {
                     callback.onStart();
                 }
@@ -74,18 +76,18 @@ public abstract class AbstractCommand<T> {
             protected void onPostExecute(Response<T> response) {
                 super.onPostExecute(response);
                 if (response.errorResponse != null) {
-                    Callback<T> callback = callbackRef.get();
+                    //Callback<T> callback = callbackRef.get();
                     if (callback != null) {
                         callback.onFail(response.errorResponse);
                     }
                 }
                 if (response.successResponse != null) {
-                    Callback<T> callback = callbackRef.get();
+                    //Callback<T> callback = callbackRef.get();
                     if (callback != null) {
                         callback.onSuccess(response.successResponse);
                     }
                 }
-                Callback<T> callback = callbackRef.get();
+                //Callback<T> callback = callbackRef.get();
                 if (callback != null) {
                     callback.onFinish();
                 }
