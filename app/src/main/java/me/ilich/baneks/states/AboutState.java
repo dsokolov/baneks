@@ -21,12 +21,17 @@ public class AboutState extends ContentToolbarNavigationState<VoidParams> {
 
     @Override
     protected JugglerFragment onCreateToolbar(VoidParams params) {
-        return ToolbarFragment.create();
+        return ToolbarFragment.createNavigation();
     }
 
     @Override
     protected JugglerFragment onCreateNavigation(VoidParams params) {
         return NavigationFragment.create(R.id.menu_about);
+    }
+
+    @Override
+    public int getTitleRes(VoidParams params) {
+        return R.string.title_about;
     }
 
 }

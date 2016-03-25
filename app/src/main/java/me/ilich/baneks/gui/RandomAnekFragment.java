@@ -89,8 +89,7 @@ public class RandomAnekFragment extends JugglerFragment {
         if (command != null) {
             command.cancel();
         }
-        command = new RandomAnekCommand();
-        command.execute(new RandomAnekCommand.Callback() {
+        RandomAnekCommand.Callback callback = new RandomAnekCommand.Callback() {
 
             @Override
             public void onStart() {
@@ -118,7 +117,10 @@ public class RandomAnekFragment extends JugglerFragment {
                 progressContainer.setVisibility(View.GONE);
             }
 
-        });
+        };
+
+        command = new RandomAnekCommand(callback);
+        command.execute();
     }
 
 }

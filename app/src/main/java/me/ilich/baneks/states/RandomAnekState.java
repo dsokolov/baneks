@@ -28,12 +28,12 @@ public class RandomAnekState extends ContentToolbarNavigationState<VoidParams> {
 
     @Override
     protected JugglerFragment onCreateToolbar(VoidParams params) {
-        return ToolbarFragment.create();
+        return ToolbarFragment.createNavigation();
     }
 
     @Override
     public int getTitleRes(VoidParams params) {
-        return R.string.title_banek;
+        return R.string.title_banek_random;
     }
 
     @Override

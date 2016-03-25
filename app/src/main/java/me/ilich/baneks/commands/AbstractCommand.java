@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,10 +14,13 @@ import java.net.URL;
 public abstract class AbstractCommand<T> {
 
     private AsyncTask<Void, Void, Response<T>> asyncTask = null;
-    private WeakReference<Callback<T>> callbackRef;
+    private final SoftReference<Callback<T>> callbackRef;
 
-    public void execute(Callback<T> callback) {
-        this.callbackRef = new WeakReference<Callback<T>>(callback);
+    protected AbstractCommand(Callback<T> callback) {
+        this.callbackRef = new SoftReference<>(callback);
+    }
+
+    public void execute() {
         asyncTask = new AsyncTask<Void, Void, Response<T>>() {
 
             @Override

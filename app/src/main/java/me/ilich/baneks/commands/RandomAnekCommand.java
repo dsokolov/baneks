@@ -5,6 +5,10 @@ import me.ilich.baneks.data.Anek;
 
 public class RandomAnekCommand extends AbstractCommand<Anek> {
 
+    public RandomAnekCommand(Callback callback) {
+        super(callback);
+    }
+
     @Override
     protected String getUrl() {
         return "http://baneks.ru/random";

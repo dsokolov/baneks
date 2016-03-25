@@ -14,9 +14,9 @@ import me.ilich.juggler.gui.JugglerToolbarFragment;
 
 public class ToolbarFragment extends JugglerToolbarFragment {
 
-    public static JugglerFragment create() {
+    public static JugglerFragment createNavigation() {
         ToolbarFragment f = new ToolbarFragment();
-        Bundle b = addDisplayOptionsToBundle(null, ActionBar.DISPLAY_SHOW_TITLE);
+        Bundle b = addDisplayOptionsToBundle(null, ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP);
         f.setArguments(b);
         return f;
     }

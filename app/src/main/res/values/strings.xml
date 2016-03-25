@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">АКБ</string>
-    <string name="title_banek">Анектоды категории Б</string>
+    <string name="title_banek_random">Случайный анек</string>
     <string name="error_general">Произошла ошибка</string>
     <string name="retry">Ещё раз</string>
     <string name="menu_reload">Ещё</string>
     <string name="menu_random_anek">Случайный анек</string>
     <string name="menu_about">О приложении</string>
+    <string name="title_about">О приложении</string>
+    <string name="about_text1">Анекдоты категории Б</string>
+    <string name="about_version">Версия %1$s (%2$s)</string>
+    <string name="about_vk">VK</string>
+    <string name="about_web">baneks.ru</string>
 </resources>
