@@ -4,4 +4,6 @@
     <string name="error_general">Произошла ошибка</string>
     <string name="retry">Ещё раз</string>
     <string name="menu_reload">Ещё</string>
+    <string name="menu_random_anek">Случайный анек</string>
+    <string name="menu_about">О приложении</string>
 </resources>

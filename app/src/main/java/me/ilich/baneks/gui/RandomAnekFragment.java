@@ -1,4 +1,4 @@
-package me.ilich.baneks;
+package me.ilich.baneks.gui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,15 +13,16 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.ilich.baneks.R;
 import me.ilich.baneks.commands.ErrorResponse;
 import me.ilich.baneks.commands.RandomAnekCommand;
 import me.ilich.baneks.data.Anek;
 import me.ilich.juggler.gui.JugglerFragment;
 
-public class AnekFragment extends JugglerFragment {
+public class RandomAnekFragment extends JugglerFragment {
 
-    public static AnekFragment create() {
-        return new AnekFragment();
+    public static RandomAnekFragment create() {
+        return new RandomAnekFragment();
     }
 
     @Bind(R.id.container_progress)

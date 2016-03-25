@@ -7,7 +7,7 @@ public class RandomAnekCommand extends AbstractCommand<Anek> {
 
     @Override
     protected String getUrl() {
-        return "http://baneks.ru/random1";
+        return "http://baneks.ru/random";
     }
 
     @Override
