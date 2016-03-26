@@ -22,6 +22,8 @@ import me.ilich.juggler.gui.JugglerFragment;
 
 public class RandomAnekFragment extends JugglerFragment {
 
+    private static final String STATE_ANEK = "anek";
+
     public static RandomAnekFragment create() {
         return new RandomAnekFragment();
     }
@@ -39,11 +41,15 @@ public class RandomAnekFragment extends JugglerFragment {
     TextView anekBodyTextView;
 
     private RandomAnekCommand command;
+    private Anek currentAnek = null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        if (savedInstanceState != null) {
+            currentAnek = (Anek) savedInstanceState.getSerializable(STATE_ANEK);
+        }
         GoogleAnalyticsHelper.track(this);
     }
 
@@ -58,18 +64,23 @@ public class RandomAnekFragment extends JugglerFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        doLoad();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
+        if (savedInstanceState == null) {
+            doLoad();
+        } else {
+            showAnek(currentAnek);
+        }
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.random, menu);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(STATE_ANEK, currentAnek);
     }
 
     @Override
@@ -107,10 +118,8 @@ public class RandomAnekFragment extends JugglerFragment {
 
             @Override
             public void onSuccess(Anek anek) {
-                errorContainer.setVisibility(View.GONE);
-                successContainer.setVisibility(View.VISIBLE);
-                anekTitleTextView.setText(anek.getTitle());
-                anekBodyTextView.setText(anek.getBody());
+                currentAnek = anek;
+                showAnek(anek);
             }
 
             @Override
@@ -128,6 +137,20 @@ public class RandomAnekFragment extends JugglerFragment {
 
         command = new RandomAnekCommand(callback);
         command.execute();
+    }
+
+    private void showAnek(Anek anek) {
+        if (anek == null) {
+            progressContainer.setVisibility(View.GONE);
+            errorContainer.setVisibility(View.VISIBLE);
+            successContainer.setVisibility(View.GONE);
+        } else {
+            progressContainer.setVisibility(View.GONE);
+            errorContainer.setVisibility(View.GONE);
+            successContainer.setVisibility(View.VISIBLE);
+            anekTitleTextView.setText(anek.getTitle());
+            anekBodyTextView.setText(anek.getBody());
+        }
     }
 
 }

@@ -33,7 +33,7 @@ public class GoogleAnalyticsHelper {
     }
 
     public static void trackNavigationAbout(){
-        trackNavigation("random_anek");
+        trackNavigation("about");
     }
 
     public static void trackNavigationBanek(){

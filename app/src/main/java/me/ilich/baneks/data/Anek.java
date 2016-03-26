@@ -1,6 +1,8 @@
 package me.ilich.baneks.data;
 
-public class Anek {
+import java.io.Serializable;
+
+public class Anek implements Serializable {
 
     private final String title;
     private final String body;
