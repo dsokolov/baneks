@@ -175,6 +175,7 @@ public class RandomAnekFragment extends JugglerFragment {
     }
 
     public void doShare() {
+        GoogleAnalyticsHelper.trackShare(currentAnek.getId());
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, currentAnek.getTitle());
@@ -190,12 +191,14 @@ public class RandomAnekFragment extends JugglerFragment {
 
     @OnClick(R.id.b_anek_rate_up)
     public void onRateUpClick(View v) {
+        GoogleAnalyticsHelper.trackRateUp(currentAnek.getId());
         RateCommand rateCommand = new RateCommand(rateCallback, currentAnek.getId());
         rateCommand.execute();
     }
 
     @OnClick(R.id.b_anek_rate_down)
     public void onRateDownClick(View v) {
+        GoogleAnalyticsHelper.trackRateDown(currentAnek.getId());
         RateCommand rateCommand = new RateCommand(rateCallback, currentAnek.getId());
         rateCommand.execute();
     }

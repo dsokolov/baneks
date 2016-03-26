@@ -28,16 +28,28 @@ public class GoogleAnalyticsHelper {
         track("navigation", action);
     }
 
-    public static void trackNavigationRandomAnek(){
+    public static void trackNavigationRandomAnek() {
         trackNavigation("random_anek");
     }
 
-    public static void trackNavigationAbout(){
+    public static void trackNavigationAbout() {
         trackNavigation("about");
     }
 
-    public static void trackNavigationBanek(){
+    public static void trackNavigationBanek() {
         trackNavigation("banek");
+    }
+
+    public static void trackRateUp(String id) {
+        track("rate_up", id);
+    }
+
+    public static void trackRateDown(String id) {
+        track("rate_down", id);
+    }
+
+    public static void trackShare(String id) {
+        track("share", id);
     }
 
 }
