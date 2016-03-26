@@ -1,6 +1,6 @@
 package me.ilich.baneks.commands;
 
-import me.ilich.baneks.StringHelper;
+import me.ilich.baneks.helpers.StringHelper;
 import me.ilich.baneks.data.Anek;
 
 public class RandomAnekCommand extends AbstractCommand<Anek> {

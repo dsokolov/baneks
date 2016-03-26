@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.ilich.baneks.BuildConfig;
 import me.ilich.baneks.R;
+import me.ilich.baneks.helpers.GoogleAnalyticsHelper;
 import me.ilich.juggler.gui.JugglerFragment;
 
 public class AboutFragment extends JugglerFragment {
@@ -24,6 +25,12 @@ public class AboutFragment extends JugglerFragment {
 
     @Bind(R.id.t_version)
     TextView versionTextView;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GoogleAnalyticsHelper.track(this);
+    }
 
     @Nullable
     @Override

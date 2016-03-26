@@ -17,6 +17,7 @@ import me.ilich.baneks.R;
 import me.ilich.baneks.commands.ErrorResponse;
 import me.ilich.baneks.commands.RandomAnekCommand;
 import me.ilich.baneks.data.Anek;
+import me.ilich.baneks.helpers.GoogleAnalyticsHelper;
 import me.ilich.juggler.gui.JugglerFragment;
 
 public class RandomAnekFragment extends JugglerFragment {
@@ -43,6 +44,7 @@ public class RandomAnekFragment extends JugglerFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        GoogleAnalyticsHelper.track(this);
     }
 
     @Nullable
@@ -57,6 +59,11 @@ public class RandomAnekFragment extends JugglerFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         doLoad();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override

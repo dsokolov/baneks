@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.ilich.baneks.R;
 import me.ilich.baneks.commands.RandomAnekCommand;
+import me.ilich.baneks.helpers.GoogleAnalyticsHelper;
 import me.ilich.baneks.states.AboutState;
 import me.ilich.baneks.states.RandomAnekState;
 import me.ilich.juggler.change.Add;
@@ -58,10 +59,12 @@ public class NavigationFragment extends JugglerNavigationFragment {
                 final boolean r;
                 switch (item.getItemId()) {
                     case R.id.menu_random_anek:
+                        GoogleAnalyticsHelper.trackNavigationRandomAnek();
                         navigateTo().state(Remove.dig(RandomAnekState.TAG));
                         r = true;
                         break;
                     case R.id.menu_about:
+                        GoogleAnalyticsHelper.trackNavigationAbout();
                         navigateTo().state(Remove.dig(RandomAnekState.TAG), Add.deeper(new AboutState()));
                         r = true;
                         break;
@@ -77,6 +80,7 @@ public class NavigationFragment extends JugglerNavigationFragment {
         navigationView.getHeaderView(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                GoogleAnalyticsHelper.trackNavigationBanek();
                 String[] says = getContext().getResources().getStringArray(R.array.banek_says);
                 int i = new Random().nextInt(says.length);
                 Toast.makeText(getContext(), says[i], Toast.LENGTH_SHORT).show();

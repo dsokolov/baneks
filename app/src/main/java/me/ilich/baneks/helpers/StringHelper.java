@@ -1,4 +1,4 @@
-package me.ilich.baneks;
+package me.ilich.baneks.helpers;
 
 public class StringHelper {
 
