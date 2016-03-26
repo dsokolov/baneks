@@ -16,6 +16,8 @@
     <string name="share_text">%1$s\n\n#АКБ\nhttps://play.google.com/store/apps/details?id=me.ilich.baneks</string>
     <string name="dialog_share">Поделиться анеком</string>
     <string name="anek_rating">Понравилось: %1$s</string>
+    <string name="anek_rate_up">Мне нравится! :)</string>
+    <string name="anek_rate_down">Разонравилось… :(</string>
     <array name="banek_says">
         <item>Ого-го!</item>
         <item>Щекотно!</item>

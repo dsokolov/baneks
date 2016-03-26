@@ -8,4 +8,9 @@ public class StringHelper {
         return full.substring(a + start.length(), b);
     }
 
+    public static boolean contains(String full, String part) {
+        return full.contains(part);
+    }
+
 }
+

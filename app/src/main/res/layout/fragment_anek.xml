@@ -31,7 +31,9 @@
             android:id="@+id/t_error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/error_general" />
+            android:gravity="center"
+            android:text="@string/error_general"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/b_reaload"
@@ -78,6 +80,18 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:textStyle="italic" />
+
+                <Button
+                    android:id="@+id/b_anek_rate_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anek_rate_up" />
+
+                <Button
+                    android:id="@+id/b_anek_rate_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anek_rate_down" />
 
             </LinearLayout>
 
