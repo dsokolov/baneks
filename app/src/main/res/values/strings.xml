@@ -12,8 +12,12 @@
     <string name="about_vk">VK</string>
     <string name="about_web">baneks.ru</string>
     <string name="empty" />
+    <string name="menu_share">Поделиться</string>
+    <string name="share_text">%1$s\n\n#АКБ\nhttps://play.google.com/store/apps/details?id=me.ilich.baneks</string>
+    <string name="dialog_share">Поделиться анеком</string>
     <array name="banek_says">
         <item>Ого-го!</item>
         <item>Щекотно!</item>
+        <item>Ну ты и неприятный!</item>
     </array>
 </resources>

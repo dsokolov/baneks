@@ -1,7 +1,10 @@
 package me.ilich.baneks.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,6 +45,7 @@ public class RandomAnekFragment extends JugglerFragment {
 
     private RandomAnekCommand command;
     private Anek currentAnek = null;
+    private MenuItem shareMenuItem;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,6 +79,12 @@ public class RandomAnekFragment extends JugglerFragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.random, menu);
+        inflater.inflate(R.menu.share, menu);
+
+        shareMenuItem = menu.findItem(R.id.menu_share);
+        if (currentAnek == null) {
+            shareMenuItem.setVisible(false);
+        }
     }
 
     @Override
@@ -91,11 +101,24 @@ public class RandomAnekFragment extends JugglerFragment {
                 doLoad();
                 b = true;
                 break;
+            case R.id.menu_share:
+                doShare();
+                b = true;
+                break;
             default:
                 b = super.onOptionsItemSelected(item);
                 break;
         }
         return b;
+    }
+
+    public void doShare() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, currentAnek.getTitle());
+        String text = String.format(getString(R.string.share_text), currentAnek.getBody());
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+        startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.dialog_share)));
     }
 
     @OnClick(R.id.b_reaload)
@@ -111,6 +134,9 @@ public class RandomAnekFragment extends JugglerFragment {
 
             @Override
             public void onStart() {
+                if (shareMenuItem != null) {
+                    shareMenuItem.setVisible(false);
+                }
                 progressContainer.setVisibility(View.VISIBLE);
                 errorContainer.setVisibility(View.GONE);
                 successContainer.setVisibility(View.GONE);
@@ -144,12 +170,14 @@ public class RandomAnekFragment extends JugglerFragment {
             progressContainer.setVisibility(View.GONE);
             errorContainer.setVisibility(View.VISIBLE);
             successContainer.setVisibility(View.GONE);
+            shareMenuItem.setVisible(false);
         } else {
             progressContainer.setVisibility(View.GONE);
             errorContainer.setVisibility(View.GONE);
             successContainer.setVisibility(View.VISIBLE);
             anekTitleTextView.setText(anek.getTitle());
             anekBodyTextView.setText(anek.getBody());
+            shareMenuItem.setVisible(true);
         }
     }
 
