@@ -18,7 +18,8 @@ public class RandomAnekCommand extends AbstractCommand<Anek> {
     protected Anek parseSuccessResponse(String s) {
         String title = StringHelper.substring(s, "<meta property=\"og:title\" content=\"", "\"/>");
         String content = StringHelper.substring(s, " <meta property=\"og:description\" content=\"", "\"/>");
-        return new Anek(title, content);
+        String rating = StringHelper.substring(s, "<span class=\"rating-counter\">", "</span>");
+        return new Anek(title, content, rating);
     }
 
     public interface Callback extends AbstractCommand.Callback<Anek> {

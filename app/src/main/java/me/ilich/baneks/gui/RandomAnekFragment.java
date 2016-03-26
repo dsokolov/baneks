@@ -42,6 +42,8 @@ public class RandomAnekFragment extends JugglerFragment {
     TextView anekTitleTextView;
     @Bind(R.id.t_anek_body)
     TextView anekBodyTextView;
+    @Bind(R.id.t_anek_rating)
+    TextView anekRatingTextView;
 
     private RandomAnekCommand command;
     private Anek currentAnek = null;
@@ -177,6 +179,8 @@ public class RandomAnekFragment extends JugglerFragment {
             successContainer.setVisibility(View.VISIBLE);
             anekTitleTextView.setText(anek.getTitle());
             anekBodyTextView.setText(anek.getBody());
+            String rating = String.format(getString(R.string.anek_rating), anek.getRating());
+            anekRatingTextView.setText(rating);
             shareMenuItem.setVisible(true);
         }
     }

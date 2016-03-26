@@ -6,10 +6,12 @@ public class Anek implements Serializable {
 
     private final String title;
     private final String body;
+    private final String rating;
 
-    public Anek(String title, String body) {
+    public Anek(String title, String body, String rating) {
         this.title = title;
         this.body = body;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -20,4 +22,7 @@ public class Anek implements Serializable {
         return body;
     }
 
+    public String getRating() {
+        return rating;
+    }
 }

@@ -24,6 +24,7 @@
         android:id="@+id/container_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <TextView
@@ -70,6 +71,13 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/t_anek_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
 
             </LinearLayout>
 
