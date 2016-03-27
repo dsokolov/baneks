@@ -19,7 +19,7 @@ import me.ilich.baneks.R;
 import me.ilich.baneks.commands.AbstractCommand;
 import me.ilich.baneks.commands.AnekByNumberCommand;
 import me.ilich.baneks.commands.AnekCommand;
-import me.ilich.baneks.commands.ErrorResponse;
+import me.ilich.baneks.commands.errors.ErrorResponse;
 import me.ilich.baneks.commands.RandomAnekCommand;
 import me.ilich.baneks.commands.RateCommand;
 import me.ilich.baneks.data.Anek;

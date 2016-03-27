@@ -14,6 +14,10 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
+import me.ilich.baneks.commands.errors.ErrorResponse;
+import me.ilich.baneks.commands.errors.ExceptionErrorResponse;
+import me.ilich.baneks.commands.errors.Non200ErrorResponse;
+
 public abstract class AbstractCommand<T> {
 
     private static final String COOKIES_HEADER = "Set-Cookie";

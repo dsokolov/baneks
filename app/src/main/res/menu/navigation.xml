@@ -6,6 +6,10 @@
         android:title="@string/menu_random_anek" />
 
     <item
+        android:id="@+id/menu_aneks_top"
+        android:title="@string/menu_aneks_top" />
+
+    <item
         android:id="@+id/menu_about"
         android:title="@string/menu_about" />
 

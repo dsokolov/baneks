@@ -40,6 +40,10 @@ public class GoogleAnalyticsHelper {
         trackNavigation("banek");
     }
 
+    public static void trackNavigationTop() {
+        trackNavigation("top");
+    }
+
     public static void trackRateUp(String id) {
         track("rate_up", id);
     }

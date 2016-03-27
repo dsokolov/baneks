@@ -18,6 +18,7 @@ import me.ilich.baneks.commands.RandomAnekCommand;
 import me.ilich.baneks.helpers.GoogleAnalyticsHelper;
 import me.ilich.baneks.states.AboutState;
 import me.ilich.baneks.states.RandomAnekState;
+import me.ilich.baneks.states.TopAneksState;
 import me.ilich.juggler.change.Add;
 import me.ilich.juggler.change.Remove;
 import me.ilich.juggler.gui.JugglerFragment;
@@ -66,6 +67,11 @@ public class NavigationFragment extends JugglerNavigationFragment {
                     case R.id.menu_about:
                         GoogleAnalyticsHelper.trackNavigationAbout();
                         navigateTo().state(Remove.dig(RandomAnekState.TAG), Add.deeper(new AboutState()));
+                        r = true;
+                        break;
+                    case R.id.menu_aneks_top:
+                        GoogleAnalyticsHelper.trackNavigationTop();
+                        navigateTo().state(Remove.dig(RandomAnekState.TAG), Add.deeper(new TopAneksState()));
                         r = true;
                         break;
                     default:

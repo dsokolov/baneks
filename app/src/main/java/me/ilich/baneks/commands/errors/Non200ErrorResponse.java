@@ -1,4 +1,4 @@
-package me.ilich.baneks.commands;
+package me.ilich.baneks.commands.errors;
 
 public class Non200ErrorResponse extends ErrorResponse {
 }

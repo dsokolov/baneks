@@ -18,9 +18,14 @@
     <string name="anek_rating">Понравилось: %1$s</string>
     <string name="anek_rate_up">Мне нравится! :)</string>
     <string name="anek_rate_down">Разонравилось… :(</string>
+    <string name="menu_aneks_top">Лучшие анеки</string>
+    <string name="top_pos">#%1$s</string>
+    <string name="title_top_aneks">Лучшие</string>
     <array name="banek_says">
         <item>Ого-го!</item>
         <item>Щекотно!</item>
         <item>Ну ты и неприятный!</item>
+        <item>Противный!</item>
+        <item>У тебя телефон видно, в курсе?</item>
     </array>
 </resources>
