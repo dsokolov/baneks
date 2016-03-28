@@ -42,7 +42,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'me.ilich:juggler:0.0.33'
+    compile 'me.ilich:juggler:0.0.35'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.android.gms:play-services-analytics:8.1.0'
 }

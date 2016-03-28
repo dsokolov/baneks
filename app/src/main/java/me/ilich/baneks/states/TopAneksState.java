@@ -1,5 +1,7 @@
 package me.ilich.baneks.states;
 
+import android.content.Context;
+
 import me.ilich.baneks.R;
 import me.ilich.baneks.gui.NavigationFragment;
 import me.ilich.baneks.gui.ToolbarFragment;
@@ -30,7 +32,7 @@ public class TopAneksState extends ContentToolbarNavigationState<VoidParams> {
     }
 
     @Override
-    public int getTitleRes(VoidParams params) {
+    public int getTitleRes(Context context, VoidParams params) {
         return R.string.title_top_aneks;
     }
 

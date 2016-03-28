@@ -1,7 +1,9 @@
 package me.ilich.baneks.states;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 
+import me.ilich.baneks.R;
 import me.ilich.baneks.data.TopItem;
 import me.ilich.baneks.gui.NavigationFragment;
 import me.ilich.baneks.gui.ToolbarFragment;
@@ -30,8 +32,8 @@ public class TopAnekState extends ContentBelowToolbarState<TopAnekState.Params> 
 
     @Nullable
     @Override
-    public String getTitle(Params params) {
-        return params.topItem.getId();
+    public String getTitle(Context context, Params params) {
+        return String.format(context.getString(R.string.title_anek_top), params.topItem.getPos());
     }
 
     public static class Params extends State.Params {
