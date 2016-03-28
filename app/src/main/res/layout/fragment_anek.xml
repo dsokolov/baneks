@@ -93,6 +93,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/anek_rate_down" />
 
+                <Button
+                    android:id="@+id/b_anek_moar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anek_moar" />
+
             </LinearLayout>
 
         </ScrollView>

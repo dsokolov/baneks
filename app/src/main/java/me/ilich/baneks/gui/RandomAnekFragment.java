@@ -203,7 +203,13 @@ public class RandomAnekFragment extends JugglerFragment {
         rateCommand.execute();
     }
 
+    @OnClick(R.id.b_anek_moar)
+    public void onMoarClick(View v){
+        doLoadRandom();
+    }
+
     private void doLoadRandom() {
+        GoogleAnalyticsHelper.trackRandomAnek();
         if (command != null) {
             command.cancel();
         }

@@ -56,4 +56,8 @@ public class GoogleAnalyticsHelper {
         track("share", id);
     }
 
+    public static void trackRandomAnek() {
+        track("anek_random", "");
+    }
+
 }

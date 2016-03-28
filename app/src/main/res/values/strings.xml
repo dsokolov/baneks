@@ -22,6 +22,7 @@
     <string name="top_pos">#%1$s</string>
     <string name="title_top_aneks">Лучшие</string>
     <string name="title_anek_top">Топ #%1$s</string>
+    <string name="anek_moar">Ещё</string>
     <array name="banek_says">
         <item>Ого-го!</item>
         <item>Щекотно!</item>
