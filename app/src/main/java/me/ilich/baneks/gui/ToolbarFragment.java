@@ -21,6 +21,13 @@ public class ToolbarFragment extends JugglerToolbarFragment {
         return f;
     }
 
+    public static JugglerFragment createBack() {
+        ToolbarFragment f = new ToolbarFragment();
+        Bundle b = addDisplayOptionsToBundle(null, ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP);
+        f.setArguments(b);
+        return f;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

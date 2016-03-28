@@ -19,7 +19,7 @@ import me.ilich.baneks.commands.AbstractCommand;
 import me.ilich.baneks.commands.TopCommand;
 import me.ilich.baneks.commands.errors.ErrorResponse;
 import me.ilich.baneks.data.TopItem;
-import me.ilich.baneks.states.NumberAnekState;
+import me.ilich.baneks.states.TopAnekState;
 import me.ilich.juggler.change.Add;
 import me.ilich.juggler.gui.JugglerFragment;
 
@@ -108,7 +108,7 @@ public class TopAneksFragment extends JugglerFragment {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    navigateTo().state(Add.deeper(new NumberAnekState(topItem.getId())));
+                    navigateTo().state(Add.deeper(new TopAnekState(topItem)));
                 }
             });
         }

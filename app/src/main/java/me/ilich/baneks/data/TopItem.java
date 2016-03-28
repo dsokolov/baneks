@@ -1,6 +1,8 @@
 package me.ilich.baneks.data;
 
-public class TopItem {
+import java.io.Serializable;
+
+public class TopItem implements Serializable {
 
     private final String id;
     private final String title;
@@ -17,4 +19,5 @@ public class TopItem {
     public String getTitle() {
         return title;
     }
+
 }
