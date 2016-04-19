@@ -32,8 +32,8 @@ public class AboutState extends ContentToolbarNavigationState<VoidParams> {
     }
 
     @Override
-    public int getTitleRes(Context context, VoidParams params) {
-        return R.string.title_about;
+    public String getTitle(Context context, VoidParams params) {
+        return context.getString(R.string.title_about);
     }
 
 }

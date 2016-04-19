@@ -32,8 +32,8 @@ public class TopAneksState extends ContentToolbarNavigationState<VoidParams> {
     }
 
     @Override
-    public int getTitleRes(Context context, VoidParams params) {
-        return R.string.title_top_aneks;
+    public String getTitle(Context context, VoidParams params) {
+        return context.getString(R.string.title_top_aneks);
     }
 
 }

@@ -21,7 +21,6 @@ public class BAneksApp extends Application {
     public void onCreate() {
         super.onCreate();
         app = this;
-        Juggler.init();
     }
 
     synchronized public Tracker getDefaultTracker() {
